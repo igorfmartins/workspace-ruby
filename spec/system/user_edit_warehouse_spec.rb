@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-describe 'Usuário edit um galpão' do 
+describe 'Usuário edita um galpão' do 
 
-    it ' a partir da pagina de detalhes' do 
+    it ' a partir da página de detalhes' do 
 
      #Arrange
      edit_warehouse = Warehouse.create!(name:'Rio', code:'RIO', address: 'Endereço', cep:'25000-000', city:'Rio', area: 1000, description:'Alguma descrição.')
@@ -36,7 +36,7 @@ describe 'Usuário edit um galpão' do
       fill_in 'Nome', with: 'Galpão Internacional'
       fill_in 'Cidade', with: 'Niteroi'
       fill_in 'Endereço', with: 'Av da Praia Grande, 1300'
-      click_on 'Atualizar'
+      click_on 'Enviar'
 
 
       #Assert
@@ -63,10 +63,11 @@ describe 'Usuário edit um galpão' do
       fill_in 'Nome', with: 'Galpão Internacional'
       fill_in 'Cidade', with: 'Niteroi'
       fill_in 'Endereço', with: 'Av da Praia Grande, 1300'
-      click_on 'Atualizar'
+      click_on 'Enviar'
 
      #Assert
      expect(page).to have_content 'Endereço'
+     
 
 
     end

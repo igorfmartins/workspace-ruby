@@ -43,7 +43,7 @@ describe 'Usuário cadastra um galpão' do
 
     end
 
-    it 'Usuário cria forulário com dados imcompletos'  do 
+    it 'Usuário cria formulário com dados imcompletos'  do 
         #Arrange
 
 
