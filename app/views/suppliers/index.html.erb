@@ -1,0 +1,27 @@
+<h1> Fornecedores </h1>
+
+<% if @suppliers.any? %>
+  <table>
+        <thread>
+        <tr>
+            <th>Nome</th>
+            <th>Localização</th>
+        </tr>
+        </thread>
+        <tbody>
+          <% @suppliers.each do |supplier| %>
+            <tr>
+              <td><%=link_to(supplier.brand_name, supplier_path(supplier.id)) %></td>
+              <td><%=supplier.corporate_name %></td>
+              <td><%=supplier.city %></td>
+              <td><%= supplier.state%></td>
+              <td><%=supplier.full_address %></td>
+            </tr>
+          <% end %>
+        </tbody>
+    </table>
+<% else %>
+  <p> Não existem fornecedores cadastrados.</p>
+<% end %>
+
+<%= link_to 'Cadastrar novo fornecedor', new_supplier_path %>
