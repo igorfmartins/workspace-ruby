@@ -1,15 +1,18 @@
 <h1> Modelos de Produtos</h1>
 
+<%= link_to 'Cadastrar novo', new_product_model_path%>
+
 <% if @product_models.any? %>
 
-    <% @product_models.each do |pm| %>
+    <% @product_models.each do |product_model| %>
     <div>
-    <h2><%= pm.name%></h2>
+    <h2><%= product_model.name%></h2>
+    <td><%=link_to(product_model.name, product_model_path(product_model.id)) %> <<< Mais detalhes clique aqui </td>
     <dl>
-        <dt>SKU</dt>
-        <dd><%=pm.sku%></dd>  
-        <dt>Fornecedor</dt>
-        <dd><%=pm.supplier.brand_name%></dd>  
+      <dt>SKU</dt>
+      <dd><%=product_model.sku%></dd>  
+      <dt>Fornecedor</dt>
+      <dd><%=product_model.supplier.brand_name%></dd>  
     </dl> 
     </div>
     <% end %>

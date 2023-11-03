@@ -15,7 +15,7 @@ describe 'Usuário vê modelos de produtos' do
 
   end
 
-  it ' ' do 
+  it ' Vê detalhes do produto ' do 
     #Arrange
     produt = Supplier.create!(brand_name: 'Samsung', corporate_name: 'Samsung Eletronicos LTDA', registration_number: '345431220-0001', full_address: 'Av. das Nações Unidas, 1000', city: 'São Paulo', state: 'SP', email: 'sac@samsung.com.br')
     ProductModel.create!(name:'TV-32', weight: 8000, width: 70, height: 45, depth: 10, sku: 'TV32-SAMSU-XPTO90', supplier: produt)
