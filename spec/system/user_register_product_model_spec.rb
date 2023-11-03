@@ -5,6 +5,7 @@ describe 'Usuário cadastra um modelo de prouto' do
 
     #Arrange
     supplier = Supplier.create!(brand_name: 'Samsung', corporate_name: 'Samsung Eletronicos LTDA', registration_number: '094567753-0001', full_address:'Av.Nações Unidas, 1239', city: 'São Paulo', state:'SP', email: 'sac@samsung.com.br')
+    other_supplier = Supplier.create!(brand_name: 'HP', corporate_name: 'HP Eletronicos LTDA', registration_number: '09346753-0001', full_address:'Av.do Pão de Queijo, 19', city: 'Minas Gerais', state:'MG', email: 'sac@hpcomputadores.com.br')
    
     #Act
     visit root_path
@@ -27,6 +28,23 @@ describe 'Usuário cadastra um modelo de prouto' do
     expect(page).to have_content 'Peso: 10000g'
     expect(page).to have_content 'Fornecedor: Samsung'
 
+  end
+
+  it 'deve preencher todos os campos' do 
+
+    #Arrange
+    supplier = Supplier.create!(brand_name: 'Samsung', corporate_name: 'Samsung Eletronicos LTDA', registration_number: '094567753-0001', full_address:'Av.Nações Unidas, 1239', city: 'São Paulo', state:'SP', email: 'sac@samsung.com.br')
+    
+    #Act
+    visit root_path
+    click_on 'Modelos de Produtos'
+    click_on 'Cadastrar novo'
+    fill_in 'Nome', with: ''    
+    fill_in 'SKU', with: ''    
+    click_on 'Enviar'
+
+    #Assert
+    expect(page).to have_content 'Não foi possível cadastrar o modelo de produto.'
   end
 
 
