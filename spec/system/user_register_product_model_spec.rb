@@ -5,10 +5,15 @@ describe 'Usuário cadastra um modelo de prouto' do
 
     #Arrange
     supplier = Supplier.create!(brand_name: 'Samsung', corporate_name: 'Samsung Eletronicos LTDA', registration_number: '094567753-0001', full_address:'Av.Nações Unidas, 1239', city: 'São Paulo', state:'SP', email: 'sac@samsung.com.br')
-    other_supplier = Supplier.create!(brand_name: 'HP', corporate_name: 'HP Eletronicos LTDA', registration_number: '09346753-0001', full_address:'Av.do Pão de Queijo, 19', city: 'Minas Gerais', state:'MG', email: 'sac@hpcomputadores.com.br')
-   
+    other_supplier = Supplier.create!(brand_name: 'HP', corporate_name: 'HP Eletronicos LTDA', registration_number: '09346753-0001', full_address:'Av.do Pão de Queijo, 19', city: 'Minas Gerais', state:'MG', email: 'sac@hpcomputadores.com.br')    
+    User.create!(email: 'devdeve@outlook.com', password:'password')
+
     #Act
     visit root_path
+    click_on 'Entrar'                       
+    fill_in 'E-mail', with: 'devdeve@outlook.com'
+    fill_in 'Senha', with: 'password'
+    click_on 'Log in' 
     click_on 'Modelos de Produtos'
     click_on 'Cadastrar novo'
     fill_in 'Nome', with: 'TV 40 polegadas'
@@ -33,10 +38,15 @@ describe 'Usuário cadastra um modelo de prouto' do
   it 'deve preencher todos os campos' do 
 
     #Arrange
+    User.create!(email: 'devdeve@outlook.com', password:'password')
     supplier = Supplier.create!(brand_name: 'Samsung', corporate_name: 'Samsung Eletronicos LTDA', registration_number: '094567753-0001', full_address:'Av.Nações Unidas, 1239', city: 'São Paulo', state:'SP', email: 'sac@samsung.com.br')
     
     #Act
     visit root_path
+    click_on 'Entrar'                       
+    fill_in 'E-mail', with: 'devdeve@outlook.com'
+    fill_in 'Senha', with: 'password'
+    click_on 'Log in' 
     click_on 'Modelos de Produtos'
     click_on 'Cadastrar novo'
     fill_in 'Nome', with: ''    
