@@ -39,5 +39,4 @@ describe 'Usuário se autentica' do
         expect(page).not_to have_button 'Sair'
         expect(page).not_to have_content 'devdeve@outlook.com' 
     end
-
 end

@@ -15,26 +15,22 @@ describe 'Usuário vê modelos de produtos' do
     expect(page).to have_content 'Para continuar, faça login ou registre-se.' 
     end
 
-
-
-
   it 'a partir do menu' do 
-  #Arrange
-  User.create!(email: 'devdeve@outlook.com', password:'password')
+    #Arrange
+    User.create!(email: 'devdeve@outlook.com', password:'password')
 
-  #Act
-  visit root_path
-  click_on 'Entrar'
-  fill_in 'E-mail', with: 'devdeve@outlook.com'
-  fill_in 'Senha', with: 'password'
-  click_on 'Log in'    
-  within('nav') do
-    click_on 'Modelos de Produtos'
-  end    
+    #Act
+    visit root_path
+    click_on 'Entrar'
+    fill_in 'E-mail', with: 'devdeve@outlook.com'
+    fill_in 'Senha', with: 'password'
+    click_on 'Log in'    
+    within('nav') do
+      click_on 'Modelos de Produtos'
+    end    
 
-  #Assert
-  expect(current_path).to eq product_models_path
-
+    #Assert
+    expect(current_path).to eq product_models_path
   end
 
   it ' Vê detalhes do produto ' do 

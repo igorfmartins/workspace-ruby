@@ -16,7 +16,6 @@ describe 'Usuário cadastra um galpão' do
       expect(page).to have_field("Cidade")
       expect(page).to have_field("CEP")
       expect(page).to have_field("Área")
-
     end
 
     it 'com sucesso' do 

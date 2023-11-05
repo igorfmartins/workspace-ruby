@@ -56,6 +56,4 @@ describe 'Usuário cadastra um modelo de prouto' do
     #Assert
     expect(page).to have_content 'Não foi possível cadastrar o modelo de produto.'
   end
-
-
 end

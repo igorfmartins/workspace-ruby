@@ -19,8 +19,7 @@ describe 'Usuário vê detalhes de um fornecedor' do
         expect(page).to have_content('434454234')
     end
 
-    it 'e volta para tela inicial' do 
-        
+    it 'e volta para tela inicial' do         
      #Arrange
      supplier = Supplier.create!(corporate_name:'ACME LTDA', brand_name:'ACME', registration_number:'434454234', full_address:'Av. das Palmas, 1100', city:'Bauru', state:'SP', email:'contatoacme@outlook.com')
         
@@ -32,7 +31,6 @@ describe 'Usuário vê detalhes de um fornecedor' do
 
      #Assert
      expect(current_path).to eq(root_path)
-
     end
 
 end
