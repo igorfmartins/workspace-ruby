@@ -7,12 +7,9 @@
  <strong>Cidade: </strong><%=@warehouse.city%>
  <strong>Área: </strong><%=@warehouse.area%> m²
  <strong>Endereço: </strong><%=@warehouse.address%><strong> cep: </strong><%=@warehouse.cep%>
- 
-
 </div>
 
 <div>
-
  <%= link_to('Editar', edit_warehouse_path(@warehouse.id))%>
 
  <%= button_to('Remover', warehouse_path(@warehouse.id), method: :delete)%>
